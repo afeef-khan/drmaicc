@@ -112,7 +112,7 @@
         <div class="container">
             <section class="hero">
 
-                <div class="hero-left">
+                <div class="hero-left animate-on-scroll animate-left">
 
                     <div class="rating-badge">
                         <span class="badge-dot">
@@ -185,7 +185,7 @@
                     </div>
                 </div>
 
-                <div class="hero-right">
+                <div class="hero-right animate-on-scroll animate-right">
 
                     <!-- <div class="card-members">
                     <div class="card-members-label">Daily health report<br>for you team</div>
@@ -250,7 +250,7 @@
 
         <!-- ── ABOUT ── -->
         <section class="about-section" id="about">
-            <div class="about-image-wrap">
+            <div class="about-image-wrap animate-on-scroll animate-left">
                 <div class="about-image-main">
                     <img src="assets/images/about-image.avif" alt="Dr. Mai" />
                 </div>
@@ -259,7 +259,7 @@
                     <div class="about-badge-text">Satisfied Patients</div>
                 </div>
             </div>
-            <div class="about-content">
+            <div class="about-content animate-on-scroll animate-right">
                 <div class="section-tag">Who we are</div>
                 <h2>Healing the whole of you</h2>
                 <p>We are proud to provide alternative biological medicine integrated with programs that envelope the
@@ -305,7 +305,7 @@
         <section class="services">
 
             <!-- Header row -->
-            <div class="services-header">
+            <div class="services-header animate-on-scroll">
                 <div class="services-header-left">
                     <div class="section-label">
                         <span></span>
@@ -390,12 +390,12 @@
 
         <!-- ── HOW IT WORKS ── -->
         <section class="how-section" id="how">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <div class="section-tag" style="margin:0 auto 16px;">How It Works</div>
                 <h2>Your Journey to Wellness in 3 Steps</h2>
                 <p>A clear, guided process that puts you in the driver's seat of your own health recovery.</p>
             </div>
-            <div class="how-steps">
+            <div class="how-steps animate-on-scroll delay-1">
                 <div class="how-step">
                     <div class="step-number">01</div>
                     <span class="step-badge">Register</span>
@@ -404,7 +404,7 @@
                     <p>Schedule your visit online and share a few basic details so we can prepare for your consultation.
                     </p>
                 </div>
-                <div class="how-step">
+                <div class="how-step animate-on-scroll delay-1">
                     <div class="step-number">02</div>
                     <span class="step-badge">Visit</span>
                     <div class="step-icon"><i class="fas fa-hospital-user"></i></div>
@@ -413,7 +413,7 @@
                         screening,
                         and lab analysis to identify root causes.</p>
                 </div>
-                <div class="how-step">
+                <div class="how-step animate-on-scroll delay-1">
                     <div class="step-number">03</div>
                     <span class="step-badge">Start Journey</span>
                     <div class="step-icon"><i class="fas fa-heart-pulse"></i></div>
@@ -426,7 +426,7 @@
 
         <!-- ── DOCTORS ── -->
         <section class="doctors-section" id="doctors">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <div>
                     <div class="section-tag">Our Team</div>
                     <h2>Meet Our Dedicated<br>Wellness Specialists</h2>
@@ -502,7 +502,7 @@
         <!-- ── WHY CHOOSE US ── -->
         <section class="why-section" id="why">
             <div class="why-inner">
-                <div class="why-content">
+                <div class="why-content animate-on-scroll">
                     <div class="section-tag">Why Choose Us</div>
                     <h2>A Different Approach to Your Health</h2>
                     <p>We go beyond treating symptoms — we focus on understanding and addressing the root cause. By
@@ -543,7 +543,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="why-visual">
+                <div class="why-visual animate-on-scroll">
                     <div class="why-image-grid">
                         <div class="why-img-wrap">
                             <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80&fit=crop"
@@ -570,7 +570,7 @@
         </section>
 
         <!-- ── STATS STRIP ── -->
-        <div class="stats-strip">
+        <div class="stats-strip animate-on-scroll">
             <div class="stat-item">
                 <div class="stat-number">15<span>+</span></div>
                 <div class="stat-label">Years of Experience</div>
@@ -593,7 +593,7 @@
         </div>
 
         <!-- ── APPOINTMENT ── -->
-        <section class="appointment-section" id="appointment">
+        <section class="appointment-section animate-on-scroll" id="appointment">
             <div class="appointment-inner">
                 <div class="appointment-left">
                     <div class="section-tag"
@@ -750,26 +750,66 @@
     <script>
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
+
         hamburger.addEventListener('click', () => {
             mobileMenu.classList.toggle('open');
         });
 
-        // Counter animation for stats
+
+        // ─────────────────────────────
+        // SCROLL ANIMATION SYSTEM
+        // ─────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.15 });
+
+
+        // Apply to ALL animated elements
+        const animatedElements = document.querySelectorAll(`
+    .animate-on-scroll,
+    .animate-card-on-scroll,
+    .animate-image,
+    .animate-left,
+    .animate-right,
+    .animate-up,
+    .animate-zoom
+`);
+
+        animatedElements.forEach((el, index) => {
+            // Auto stagger (cleaner than manual delay classes)
+            el.style.transitionDelay = `${index * 0.08}s`;
+            observer.observe(el);
+        });
+
+
+        // ─────────────────────────────
+        // COUNTER ANIMATION
+        // ─────────────────────────────
         function animateCounters() {
             const counters = document.querySelectorAll('.stat-number');
+
             counters.forEach(counter => {
                 const text = counter.textContent;
                 const num = parseInt(text);
                 const suffix = text.replace(/[0-9]/g, '');
+
                 let current = 0;
                 const increment = num / 60;
+
                 const timer = setInterval(() => {
                     current += increment;
+
                     if (current >= num) {
                         current = num;
                         clearInterval(timer);
                     }
-                    counter.innerHTML = Math.floor(current) + '<span>' + suffix + '</span>';
+
+                    counter.innerHTML =
+                        Math.floor(current) + '<span>' + suffix + '</span>';
                 }, 25);
             });
         }
@@ -786,47 +826,6 @@
         const statsStrip = document.querySelector('.stats-strip');
         if (statsStrip) statsObserver.observe(statsStrip);
 
-        // Scroll reveal
-        const revealItems = document.querySelectorAll('.service-card, .how-step, .doctor-card, .why-item');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, i * 80);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        revealItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(24px)';
-            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            revealObserver.observe(item);
-        });
-
-        // ═══════════════════════════════════════════
-        // SCROLL ANIMATIONS — Intersection Observer
-        // ═══════════════════════════════════════════
-        const animationObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                } else {
-                    entry.target.classList.remove('in-view');
-                }
-            });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -40px 0px'
-        });
-
-        document.querySelectorAll(
-            '.animate-on-scroll, .animate-card-on-scroll, .animate-image'
-        ).forEach(el => {
-            animationObserver.observe(el);
-        });
     </script>
 </body>
 

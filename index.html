@@ -805,6 +805,28 @@
             item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             revealObserver.observe(item);
         });
+
+        // ═══════════════════════════════════════════
+        // SCROLL ANIMATIONS — Intersection Observer
+        // ═══════════════════════════════════════════
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                } else {
+                    entry.target.classList.remove('in-view');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll(
+            '.animate-on-scroll, .animate-card-on-scroll, .animate-image'
+        ).forEach(el => {
+            animationObserver.observe(el);
+        });
     </script>
 </body>
 

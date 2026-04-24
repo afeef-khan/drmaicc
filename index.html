@@ -315,115 +315,93 @@
         </section>
 
         <!-- ── SERVICES ── -->
-        <section class="services-section" id="services">
-            <div class="services-heading-wrapper">
-                <div class="services-heading-content">
-                    <div class="section-tag">Our Services</div>
-                    <h2>Gentle Care for a Healthier Life</h2>
-                    <p>A sophisticated synthesis of the very best natural medicine with modern advances in technology,
-                        treating the whole person — body, mind, and soul.</p>
+        <section class="services">
+
+            <!-- Header row -->
+            <div class="services-header">
+                <div class="services-header-left">
+                    <div class="section-label">
+                        <span></span>
+                        Our Services
+                    </div>
+                    <h2 class="section-title">Gentle Care for a<br>Healthier You</h2>
+                    <p class="section-subtitle">
+                        Reconnect with yourself through practices built to bring harmony,
+                        peace, and mind-to-body balance.
+                    </p>
                 </div>
-                <a href="#" class="btn btn-outline">
-                    View All Services
-                    <span class="arrow-circle">
-                        <svg viewBox="0 0 14 14">
-                            <path d="M2 7h10M8 3l4 4-4 4" />
+                <button href="#" class="button">
+                     Explore Services
+                    <span class="button__icon-wrapper">
+                        <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg"
+                            width="10">
+                            <path
+                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                fill="currentColor"></path>
+                        </svg>
+
+                        <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                            class="button__icon-svg button__icon-svg--copy">
+                            <path
+                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                fill="currentColor"></path>
                         </svg>
                     </span>
-                </a>
+                </button>
             </div>
-            <div class="services-card-wrapper">
-                <div class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://static.wixstatic.com/media/a29f55_c66857d0edae4e779de7e62bd9bc2184~mv2.jpg/v1/crop/x_37,y_0,w_426,h_512/fill/w_279,h_328,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Biological-dentistry-focuses-on-treating-dental-concerns-as-effectively-and-safely-as-poss.jpg"
-                            alt="Bio Dentistry">
-                    </div>
-                    <div class="service-card-content">
-                        <h3>Bio Dentistry</h3>
-                        <p>Biological Dentistry understands that the mouth and body are connected — illness or disease
-                            that
-                            occurs inside the body is reflected orally, and vice versa.</p>
-                        <a href="#" class="service-link">Learn more <svg viewBox="0 0 14 14">
-                                <path d="M2 7h10M8 3l4 4-4 4" />
-                            </svg></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://static.wixstatic.com/media/a29f55_73ce0a49072c42d98b818e254fbad0cf~mv2.jpeg/v1/crop/x_1336,y_0,w_3345,h_4016/fill/w_279,h_328,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/adobestock_80673697.jpeg"
-                            alt="Quantum Detox">
-                    </div>
-                    <div class="service-card-content">
-                        <h3>Quantum Detox</h3>
-                        <p>Individually designed detox programs to eliminate toxic heavy metals — mercury, lead,
-                            aluminum —
-                            that accumulate in our environment and disrupt wellbeing.</p>
-                        <a href="#" class="service-link">Learn more <svg viewBox="0 0 14 14">
-                                <path d="M2 7h10M8 3l4 4-4 4" />
-                            </svg></a>
+
+            <!-- Cards grid -->
+            <div class="cards-grid">
+
+                <!-- Card 1: Massage Therapy — full photo + overlay -->
+                <div class="card card-photo">
+                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=82&fit=crop"
+                        alt="Massage Therapy" />
+                    <div class="card-photo-overlay">
+                        <h3>Massage Therapy</h3>
+                        <p>Experience deep relaxation that refreshes and restores body wellness.</p>
+                        <div class="card-actions">
+                            <button class="btn-card btn-card-solid">Explore Session</button>
+                            <button class="btn-card btn-card-ghost">Reserve Session</button>
+                        </div>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://static.wixstatic.com/media/a29f55_7e2188786b41430d82cb22b261e9af3e~mv2.jpg/v1/crop/x_425,y_0,w_750,h_900/fill/w_279,h_328,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/ezgif_com-gif-maker%20(2).jpg"
-                            alt="Neural Therapy">
+
+                <!-- Card 2: Mindfulness — white card -->
+                <div class="card card-content">
+                    <div>
+                        <h3>Mindfulness &amp; Meditation</h3>
+                        <p>Cleanse your body with guided meditations designed to restore clarity and inner calm.</p>
+                        <div class="card-content-actions">
+                            <button class="btn-card btn-card-solid">Explore Session</button>
+                            <button class="btn-card-outline">Reserve Session</button>
+                        </div>
                     </div>
-                    <div class="service-card-content">
-                        <h3>Neural Therapy</h3>
-                        <p>Detailed thermal investigation revealing unique temperature patterns across the body,
-                            providing
-                            insight into the nervous system's role in chronic illness.</p>
-                        <a href="#" class="service-link">Learn more <svg viewBox="0 0 14 14">
-                                <path d="M2 7h10M8 3l4 4-4 4" />
-                            </svg></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1591343395082-e120087004b4?w=500&q=80&fit=crop"
-                            alt="Cranio Sacral Therapy">
-                    </div>
-                    <div class="service-card-content">
-                        <h3>Cranio Sacral Therapy</h3>
-                        <p>A gentle, non-invasive therapy that releases tension, eases headaches, and improves mobility
-                            —
-                            bringing your body and mind back into balance.</p>
-                        <a href="#" class="service-link">Learn more <svg viewBox="0 0 14 14">
-                                <path d="M2 7h10M8 3l4 4-4 4" />
-                            </svg></a>
+                    <div class="card-content-img">
+                        <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600&q=82&fit=crop"
+                            alt="Mindfulness" />
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1616391182219-e080b4d1043a?w=500&q=80&fit=crop"
-                            alt="TFT Tapping Therapy">
+
+                <!-- Card 3: Sleep Recovery — green card -->
+                <div class="card card-green">
+                    <div>
+                        <h3>Sleep &amp; Stress Recovery</h3>
+                        <p>Restore your natural sleep rhythms and release tension with expert-guided recovery programs.
+                        </p>
+                        <div class="card-green-actions">
+                            <button class="btn-card btn-card-white">Reserve Session</button>
+                            <button class="btn-card btn-card-white">Explore More</button>
+                        </div>
                     </div>
-                    <div class="service-card-content">
-                        <h3>TFT Tapping Therapy</h3>
-                        <p>A highly effective, non-invasive self-help alternative to long-term or drug-related
-                            psychotherapy
-                            using meridian tapping techniques to reduce suffering.</p>
-                        <a href="#" class="service-link">Learn more <svg viewBox="0 0 14 14">
-                                <path d="M2 7h10M8 3l4 4-4 4" />
-                            </svg></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-image">
-                        <img src="https://images.unsplash.com/photo-1666214280577-5c815af0e8a5?w=500&q=80&fit=crop"
-                            alt="Anti-Aging Programs">
-                    </div>
-                    <div class="service-card-content">
-                        <h3>Anti-Aging Programs</h3>
-                        <p>Comprehensive regenerative medicine programs designed to improve total quality of life,
-                            prevent
-                            age-related diseases, and restore vitality from within.</p>
-                        <a href="#" class="service-link">Learn more <svg viewBox="0 0 14 14">
-                                <path d="M2 7h10M8 3l4 4-4 4" />
-                            </svg></a>
+                    <div class="card-green-img">
+                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=82&fit=crop"
+                            alt="Sleep Recovery" />
                     </div>
                 </div>
+
             </div>
+
         </section>
 
         <!-- ── HOW IT WORKS ── -->

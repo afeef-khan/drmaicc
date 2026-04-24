@@ -944,20 +944,20 @@ a {
     left: 0;
     right: 0;
     padding: 28px 24px;
-    background: linear-gradient(to top, rgba(3, 26, 12, 0.75) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(3, 26, 12, 0.85) 0%, transparent 100%);
 }
 
 .card-photo-overlay h3 {
     font-size: 20px;
     font-weight: 800;
-    color: var(--Secondary);
+    color: #fff !important;
     margin-bottom: 8px;
     line-height: 1.2;
 }
 
 .card-photo-overlay p {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.82);
     line-height: 1.55;
     margin-bottom: 16px;
 }
@@ -1473,7 +1473,7 @@ a {
     font-size: 14px;
     color: var(--muted);
     line-height: 1.65;
-    max-width: 240px;
+    max-width: 280px;
 }
 
 .step-badge {
@@ -1491,7 +1491,7 @@ a {
 
 /* ── DOCTORS ── */
 .doctors-section {
-    padding: 60px 0 96px;
+    padding: 44px 0 96px;
     margin-bottom: 40px;
 }
 
